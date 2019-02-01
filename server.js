@@ -18,9 +18,15 @@ wss.on('connection', (ws) => {
   ws.on('close', () => console.log('Client disconnected'));
 });
 
-wss.on('message', (data) => {
+// wss.on('message', (data) => {
+//   wss.clients.forEach((client) => {
+//     client.send(data);
+//   });
+// });
+
+ws.on('message', function incoming(data) {
   wss.clients.forEach((client) => {
-    client.send(data);
+    client.send('toots');
   });
 });
 
