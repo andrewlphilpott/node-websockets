@@ -26,7 +26,7 @@ wss.on('connection', (ws) => {
 
 ws.on('message', function incoming(data) {
   wss.clients.forEach((client) => {
-    client.send('toots');
+    client.send('toots!');
   });
 });
 
