@@ -23,7 +23,7 @@ wss.on('message', (msg) => {
 });
 
 setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
+//   wss.clients.forEach((client) => {
+//     client.send(new Date().toTimeString());
+//   });
 }, 1000);
