@@ -20,12 +20,12 @@ wss.on('connection', (ws) => {
 
 wss.on('message', (data) => {
   wss.clients.forEach((client) => {
-    client.send('message');
+    client.send(new Date().toTimeString());
   });
 });
 
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
-}, 1000);
+// setInterval(() => {
+//   wss.clients.forEach((client) => {
+//     client.send(new Date().toTimeString());
+//   });
+// }, 1000);
